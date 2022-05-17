@@ -11,7 +11,7 @@ const AvailableMeals = (props) => {
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
-        "https://react-http-c5b82-default-rtdb.firebaseio.com/meals"
+        "https://react-http-c5b82-default-rtdb.firebaseio.com/meals.json"
       );
 
       if (!response.ok) {
@@ -30,7 +30,6 @@ const AvailableMeals = (props) => {
           price: responseData[key].price,
         });
       }
-
       setMeals(loadedMeals);
       setIsLoading(false);
     };
