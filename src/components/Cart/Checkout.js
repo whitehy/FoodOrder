@@ -45,6 +45,14 @@ const Checkout = (props) => {
     if (!formIsValid) {
       return;
     }
+
+    //Submit cart data
+    props.onConfirm({
+      name: enteredName,
+      street: enteredStreet,
+      city: enteredCity,
+      postalCode: enteredPostalCode,
+    });
   };
 
   const nameControlClasses = `${classes.control} ${
